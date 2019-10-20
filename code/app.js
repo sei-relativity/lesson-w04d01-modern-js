@@ -140,3 +140,25 @@ stringNumbers.forEach(crazyNumber => {
     newNewString = newString.filter(number => number < 4000)
     totalNumbersUnder4000 = newNewString.reduce( (accumulator, currentValue) => accumulator + (currentValue));
 console.log(totalNumbersUnder4000);
+
+
+// extra practise
+// map
+
+const products = [
+    {name: 'flower vase', price: 75},
+    {name: 'lamp', price: 85},
+    {name: 'jar of honey', price: 95},
+    {name: 'coil', price: 65},
+    {name: 'lumber', price: 55}
+  ];
+  
+  // Write your solution here
+  let discountProducts=[];
+
+  discountProducts = products.map(item => {item.price = item.price/2
+  return item})
+  
+  console.log(discountProducts);
+
+

@@ -456,9 +456,13 @@ const products = [
   {name: 'lumber', price: 55}
 ];
 
-// Write your solution here
+  let discountProducts=[];
 
-console.log(discountProducts);
+  discountProducts = products.map(item => {item.price = item.price/2
+  return item})
+  
+  console.log(discountProducts);
+
 ```
 
 #### Filter
