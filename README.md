@@ -479,8 +479,11 @@ const products = [
 ];
 
 // Write your solution here
+  let cheapProducts = [];
+  cheapProducts = products.filter(item => item.price < 70)
+  
+  console.log(cheapProducts);
 
-console.log(cheapProducts);
 ```
 
 #### Reduce

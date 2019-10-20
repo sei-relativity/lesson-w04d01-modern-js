@@ -162,3 +162,17 @@ const products = [
   console.log(discountProducts);
 
 
+//   filter
+const products = [
+    { name: 'flower vase',   price: 75 },
+    { name: 'lamp',  price: 85 },
+    { name: 'jar of honey',   price: 95 },
+    { name: 'seashell frame', price: 65 },
+    { name: 'lumber',  price: 55 }
+  ];
+  
+  // Write your solution here
+  let cheapProducts = [];
+  cheapProducts = products.filter(item => item.price < 70)
+  
+  console.log(cheapProducts);
