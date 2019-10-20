@@ -264,7 +264,7 @@ instructors.forEach(function(item){
     if(number<4000){
     totalNumbersUnder4000 = totalNumbersUnder4000 + number
     }
-  })
+    })
     ```
 
 **Resources:**
