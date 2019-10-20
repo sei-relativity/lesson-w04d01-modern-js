@@ -903,6 +903,17 @@ let pansResDSrt = panagrams.sort((a, b) => b - a);
 ##### Bonus
 
 - Filter for words that have at least two vowels in them
+
+```js
+const vowel_count = string =>
+  [...string].filter(c => "aeiou".includes(c.toLowerCase())).length;
+
+let panResFilV = panagram.filter(x => vowel_count(x) >= 2);
+console.log(panResFilV);
+let pansResFil = panagrams.filter(x => vowel_count(x) >= 2);
+console.log(pansResFilV);
+```
+
 - Find each instance of the word zephyr - include case insensitve and plurals (Zephyr, zephyrs, and Zephyrs), and list the index positions
 
 ```js

@@ -409,9 +409,11 @@ let numResfE = nums.forEach(x => {
 });
 let panResfE = panagram.forEach(x => {
   if (x.charAt(x.length - 1) == "!") console.log(x);
+  else false;
 });
 let pansResfE = panagrams.forEach(x => {
   if (x.charAt(x.length - 1) == "!") console.log(x);
+  else false;
 });
 
 //////////     Map     \\\\\\\\\\
@@ -459,16 +461,26 @@ let smallResASrt = smallNums.sort((a, b) => a - b);
 console.log(smallResASrt);
 let numResASrt = nums.sort((a, b) => a - b);
 console.log(numResASrt);
-let panResASrt = panagram.sort((a, b) => a - b);
+let panResASrt = panagram.sort((a, b) => a.localeCompare(b));
 console.log(panResASrt);
-let pansResASrt = panagrams.sort((a, b) => a - b);
+let pansResASrt = panagrams.sort((a, b) => a.localeCompare(b));
 console.log(pansResASrt);
 //////////     Descending Sort     \\\\\\\\\\
 let smallResDSrt = smallNums.sort((a, b) => b - a);
 console.log(smallResDSrt);
 let numResDSrt = nums.sort((a, b) => b - a);
 console.log(numResDSrt);
-let panResDSrt = panagram.sort((a, b) => b - a);
+let panResDSrt = panagram.sort((a, b) => b.localeCompare(a));
 console.log(panResDSrt);
-let pansResDSrt = panagrams.sort((a, b) => b - a);
+let pansResDSrt = panagrams.sort((a, b) => b.localeCompare(a));
 console.log(pansResDSrt);
+
+//////////     Bonus     \\\\\\\\\\
+//////////     Filter for 2 Vowel Words     \\\\\\\\\\
+const vowel_count = string =>
+  [...string].filter(c => "aeiou".includes(c.toLowerCase())).length;
+
+let panResFilV = panagram.filter(x => vowel_count(x) >= 2);
+console.log(panResFilV);
+let pansResFil = panagrams.filter(x => vowel_count(x) >= 2);
+console.log(pansResFilV);
