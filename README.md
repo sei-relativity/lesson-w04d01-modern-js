@@ -134,7 +134,9 @@ function whoIsTheBestStudent() {
 Your solution:
 
 ```js
-
+const addFive = num => num+5;
+const divide = (num1,num2) => num1/num2;
+const whoIsTheBestStudent = () => console.log('Muhannad')
 ```
 
 ##### Create a function called `fullName`
@@ -151,6 +153,7 @@ Your solution:
 
 ```js
 
+const fullName = (firstName, lastName) => firstName + " " +lastName;
 ```
 
 ##### Turn `sayHello` into an arrow function
@@ -166,7 +169,7 @@ sayHello();
 Your solution:
 
 ```js
-
+const sayHello = name => name + " Hello"
 ```
 
 **Resources:**
@@ -227,6 +230,10 @@ instructors.forEach(function(item){
 
     // For each friend in friends, print "Hi friendName!"
     // Write your solution here
+    const friends = ["Aisha", "Abdulrahman", "Sumayah"];
+    friends.forEach((item) => {
+        console.log('Hey friend '+ item)
+    })
     ```
 2. Crazy Numbers
     ```js
@@ -236,6 +243,10 @@ instructors.forEach(function(item){
 
     // Sum all the numbers in nums and save the result in total
     // Write your solution here
+    nums.forEach((item) => {
+      total += item
+    })
+    console.log(total)
     ```
 3. Crazy number again!!
     ```js
@@ -248,6 +259,9 @@ instructors.forEach(function(item){
     // in totalNumbersUnder4000
     //
     // Write your solution here
+    stringNumbers.forEach((item) => {
+      if(parseInt(item)<=4000) totalNumbersUnder4000 += parseInt(item)
+    })
     ```
 
 **Resources:**
@@ -272,6 +286,7 @@ The `map()` method creates a new array with the results of calling a provided fu
     let times100 = [];
 
     // Write your solution here
+      times100.push(nums1.map(x=>x*100))
     ```
 2. Capitalize
     Capitalize all the strings in the IA's array and store them in the array capitalizedIA.
@@ -281,6 +296,7 @@ The `map()` method creates a new array with the results of calling a provided fu
     let capitalizedIAs = [];
 
     // Write your solution here
+      capitalizedIAs.push(iAS.map(x=>x.charAt(0).toUpperCase()+x.slice(1)))
     ```
 3. Abbreviations
     ```js
@@ -290,6 +306,7 @@ The `map()` method creates a new array with the results of calling a provided fu
 
     // Find the abbreviation of all days and add them to dayAbbreviations array
     // Write your solution here
+    dayAbbreviations = days.map((val, index, arr) => val.substring(0,3));
     ```
 4. century20
     ```js
@@ -298,6 +315,12 @@ The `map()` method creates a new array with the results of calling a provided fu
 
     // century20 should be: [1989, 2000, 1999, 1973]
     // Write your solution here
+      century20.push(years.map(x => {
+        if(x<=2000) return x
+    
+    }
+    )
+        )
     ```
 
 
@@ -316,7 +339,7 @@ The `filter()` method creates a new array with all elements that pass the test i
     ```js
     const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     // Write your solution here
-    console.log(result);
+      result=nums.filter(item => item%3===0)
     ```
 2. Create an array of names (maybe use 3 of your friends)
 
@@ -328,6 +351,7 @@ The `filter()` method creates a new array with all elements that pass the test i
     ```js
     const names = ["Lamees", "Nawal", "Mesfer"];
     // Write your solution here
+    let result = names.filter(val => val.includes ('a'));   
     console.log(result);
     ```
 3. century20
@@ -337,6 +361,9 @@ The `filter()` method creates a new array with all elements that pass the test i
 
     // century20 should be: [1989, 2000, 1999, 1973]
     // Write your solution here
+    century20 = years.filter(x=>{
+        return x<=2000 ? x:null
+    });
     ```
 
 
@@ -358,7 +385,7 @@ The `reduce()` method executes a reducer function (that you provide) on each ele
     let sum;
 
     // Write your solution here
-
+    nums.reduce((x,y)=>sum=x+y)
     console.log(sum);
     ```
 2. Crazy Numbers
@@ -369,6 +396,7 @@ The `reduce()` method executes a reducer function (that you provide) on each ele
 
     // Sum all the numbers in nums and save the result in total
     // Write your solution here
+    nums.reduce((x,y)=>total=x+y)
     ```
 3. Crazy number again!!
     ```js
@@ -381,6 +409,7 @@ The `reduce()` method executes a reducer function (that you provide) on each ele
     // in totalNumbersUnder4000
     //
     // Write your solution here
+    stringNumbers.reduce((x,y)=>totalNumbersUnder4000=Number(x)+Number(y))
     ```
 
 ### Keep Going
@@ -409,7 +438,9 @@ const products = [
 ];
 
 // Write your solution here
-
+const discountProducts = products.map(x => 
+   { x.price = x.price/2
+    return x})
 console.log(discountProducts);
 ```
 
@@ -427,7 +458,9 @@ const products = [
 ];
 
 // Write your solution here
-
+const cheapProducts = products.filter(x => {
+    if(x.price <= 70) return x
+})
 console.log(cheapProducts);
 ```
 
@@ -445,7 +478,9 @@ const products = [
 ];
 
 // Write your solution here
-
+const cheapProducts = products.filter(x => {
+    if(x.price < 70) return x
+})
 console.log(totalPrice);
 ```
 
