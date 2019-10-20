@@ -459,7 +459,7 @@ const products = [
 
 // Write your solution here
 const cheapProducts = products.filter(x => {
-    if(x.price <= 70) return x
+    if(x.price < 70) return x
 })
 console.log(cheapProducts);
 ```
@@ -478,9 +478,9 @@ const products = [
 ];
 
 // Write your solution here
-const cheapProducts = products.filter(x => {
-    if(x.price < 70) return x
-})
+const totalPrice = products.reduce((x,y)=> {
+    return y.price + x
+}, 0)
 console.log(totalPrice);
 ```
 
