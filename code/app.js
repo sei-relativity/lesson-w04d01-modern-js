@@ -132,9 +132,11 @@ const stringNumbers = ["103440", "3799.2663", "3.14159265359", "859494", "59439"
 let totalNumbersUnder4000 = 0;
 
 let newString = [];
+let newNewString = [];
 stringNumbers.forEach(crazyNumber => {
     let intNumber = parseFloat(crazyNumber);
     newString.push(intNumber);
     });
-    totalNumbersUnder4000 = newString.reduce( (accumulator, currentValue) => accumulator + (currentValue < 4000));
+    newNewString = newString.filter(number => number < 4000)
+    totalNumbersUnder4000 = newNewString.reduce( (accumulator, currentValue) => accumulator + (currentValue));
 console.log(totalNumbersUnder4000);
