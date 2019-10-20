@@ -910,11 +910,24 @@ const vowel_count = string =>
 
 let panResFilV = panagram.filter(x => vowel_count(x) >= 2);
 console.log(panResFilV);
-let pansResFil = panagrams.filter(x => vowel_count(x) >= 2);
+let pansResFilV = panagrams.filter(x => vowel_count(x) >= 2);
 console.log(pansResFilV);
 ```
 
 - Find each instance of the word zephyr - include case insensitve and plurals (Zephyr, zephyrs, and Zephyrs), and list the index positions
 
 ```js
+let panResZeph = panagram.reduce(function(a, e, i) {
+  if (e.toLowerCase() == "zephyr" || e.toLowerCase() == "zephyrs")
+    a.push([e, i]);
+  return a;
+}, []);
+console.log(panResZeph);
+
+let pansResZeph = panagrams.reduce(function(a, e, i) {
+  if (e.toLowerCase() == "zephyr" || e.toLowerCase() == "zephyrs")
+    a.push([e, i]);
+  return a;
+}, []);
+console.log(pansResZeph);
 ```

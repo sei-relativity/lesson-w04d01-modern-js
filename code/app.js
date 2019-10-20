@@ -484,3 +484,18 @@ let panResFilV = panagram.filter(x => vowel_count(x) >= 2);
 console.log(panResFilV);
 let pansResFil = panagrams.filter(x => vowel_count(x) >= 2);
 console.log(pansResFilV);
+
+//////////     Find and index zephyr     \\\\\\\\\\
+let panResZeph = panagram.reduce(function(a, e, i) {
+  if (e.toLowerCase() == "zephyr" || e.toLowerCase() == "zephyrs")
+    a.push([e, i]);
+  return a;
+}, []);
+console.log(panResZeph);
+
+let pansResZeph = panagrams.reduce(function(a, e, i) {
+  if (e.toLowerCase() == "zephyr" || e.toLowerCase() == "zephyrs")
+    a.push([e, i]);
+  return a;
+}, []);
+console.log(pansResZeph);
