@@ -743,6 +743,8 @@ const panagrams = [
   "oxen",
   "forward"
 ];
+//  Arrays
+//  smallNums, nums, panagram, panagrams
 ```
 
 ##### [every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
@@ -750,40 +752,130 @@ const panagrams = [
 - Determine if every number is greater than or equal to 0
 - Determine if every word is shorter than 8 characters
 
+```js
+let smallResE = smallNums.every(x => x >= 0);
+console.log(smallResE);
+let numResE = nums.every(x => x >= 0);
+console.log(numResE);
+let panResE = panagram.every(x => x.length < 8);
+console.log(panResE);
+let pansResE = panagrams.every(x => x.length < 8);
+console.log(pansResE);
+```
+
 ##### [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 
 - Filter the array for numbers less than 100
 - Filter words that have an even length
+
+```js
+let smallResFil = smallNums.filter(x => x < 100);
+console.log(smallResFil);
+let numResFil = nums.filter(x => x < 100);
+console.log(numResFil);
+let panResFil = panagram.filter(x => x.length % 2 == 0);
+console.log(panResFil);
+let pansResFil = panagrams.filter(x => x.length % 2 == 0);
+console.log(pansResFil);
+```
 
 ##### [find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
 
 - Find the first value divisible by 5
 - Find the first word that is longer than 6 characters
 
+```js
+let smallResFnd = smallNums.find(x => x % 5 == 0);
+console.log(smallResFnd);
+let numResFnd = nums.find(x => x % 5 == 0);
+console.log(numResFnd);
+let panResFnd = panagram.find(x => x.length > 6);
+console.log(panResFnd);
+let pansResFnd = panagrams.find(x => x.length > 6);
+console.log(pansResFnd);
+```
+
 ##### [findIndex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
 
 - Find the index of the first number that is divisible by 3
 - Find the index of the first word that is less than 2 characters long
+
+```js
+let smallResFndI = smallNums.findIndex(x => x % 3 == 0);
+console.log(smallResFndI);
+let numResFndI = nums.findIndex(x => x % 3 == 0);
+console.log(numResFndI);
+let panResFndI = panagram.findIndex(x => x.length < 2);
+console.log(panResFndI);
+let pansResFndI = panagrams.findIndex(x => x.length < 2);
+console.log(pansResFndI);
+```
 
 ##### [forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
 
 - `console.log` each value of the nums array multiplied by 3
 - `console.log` each word with an exclamation point at the end of it
 
+```js
+let smallResfE = smallNums.forEach(x => console.log(x * 3));
+let numResfE = nums.forEach(x => {
+  console.log(x * 3);
+});
+let panResfE = panagram.forEach(x => {
+  if (x.charAt(x.length - 1) == "!") console.log(x);
+});
+let pansResfE = panagrams.forEach(x => {
+  if (x.charAt(x.length - 1) == "!") console.log(x);
+});
+```
+
 ##### [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 
 - Make a new array of each number multiplied by 100
 - Make a new array of all the words in all uppercase
+
+```js
+let smallResMp = smallNums.map(x => x * 100);
+console.log(smallResMp);
+let numResMp = nums.map(x => x * 100);
+console.log(numResMp);
+let panResMp = panagram.map(x => x.toUpperCase());
+console.log(panResMp);
+let pansResMp = panagrams.map(x => x.toUpperCase());
+console.log(pansResMp);
+```
 
 ##### [reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
 
 - Add all the numbers in the array together using the `reduce` method
 - Concatenate all the words using reduce
 
+```js
+let smallResRed = smallNums.reduce((x, y) => x + y, 0);
+console.log(smallResRed);
+let numResRed = nums.reduce((x, y) => x + y, 0);
+console.log(numResRed);
+let panResRed = panagram.reduce((x, y) => x + " " + y);
+console.log(panResRed);
+let pansResRed = panagrams.reduce((x, y) => x + " " + y);
+console.log(pansResRed);
+```
+
 ##### [some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
 
 - Find out if some numbers are divisible by 7
 - Find out if some words have the letter `a` in them
+
+```js
+let smallResSm = smallNums.some(x => x % 7 == 0);
+console.log(smallResSm);
+let numResSm = nums.every(x => x % 7 == 0);
+console.log(numResSm);
+let panResSm = panagram.every(x => x.includes("a"));
+console.log(panResSm);
+let pansResSm = panagrams.every(x => x.includes("a"));
+console.log(pansResSm);
+```
 
 ##### [sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
 
@@ -793,7 +885,25 @@ const panagrams = [
 - Sort the words in ascending order
 - Sort the words in descending order
 
+```js
+let smallResVSrt = smallNums.sort();
+let numResVSrt = nums.sort();
+let panResVSrt = panagram.sort();
+let pansResVSrt = panagrams.sort();
+let smallResASrt = smallNums.sort((a, b) => a - b);
+let numResASrt = nums.sort((a, b) => a - b);
+let panResASrt = panagram.sort((a, b) => a - b);
+let pansResASrt = panagrams.sort((a, b) => a - b);
+let smallResDSrt = smallNums.sort((a, b) => b - a);
+let numResDSrt = nums.sort((a, b) => b - a);
+let panResDSrt = panagram.sort((a, b) => b - a);
+let pansResDSrt = panagrams.sort((a, b) => b - a);
+```
+
 ##### Bonus
 
 - Filter for words that have at least two vowels in them
 - Find each instance of the word zephyr - include case insensitve and plurals (Zephyr, zephyrs, and Zephyrs), and list the index positions
+
+```js
+```
