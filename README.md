@@ -133,9 +133,19 @@ function whoIsTheBestStudent() {
 
 Your solution:
 
-```js
+const addFive = num => 5+num;
+undefined
+addFive(6);
+11
+const divide = (num1 ,num2) => num1 / num2 ;
+undefined
+divide(15 , 3);
+5
 
-```
+const sayHello = name => "Hello "+ name;
+const fullname = (firstName , lastName) => firstName+''+lastName ;
+const whoIsTheBestStudent = studentName => 'Noura'; 
+const whoIsTheBestStudent = studentName => 'studentName';
 
 ##### Create a function called `fullName`
 
@@ -147,7 +157,8 @@ Your solution:
 2. Rewrite using an arrow function
 3. Rewrite and use implicit return
 
-Your solution:
+const fullname = (firstName , lastName) => firstName+''+lastName ;
+
 
 ```js
 
@@ -225,30 +236,45 @@ instructors.forEach(function(item){
     ```js
     const friends = ["Aisha", "Abdulrahman", "Sumayah"];
 
-    // For each friend in friends, print "Hi friendName!"
-    // Write your solution here
-    ```
+    friends.forEach(function(element){
+    console.log("Hi "+ element);
+});
+
 2. Crazy Numbers
     ```js
     // That's an array with crazy numbers we cant read 😯
     const nums = [103440, 3799.2663, 3.14159265359, 859494, 59439];
     let total = 0;
 
-    // Sum all the numbers in nums and save the result in total
-    // Write your solution here
-    ```
+    nums.forEach(function(element){
+ console.log(total += element );
+});
+103440
+VM936:2 107239.2663
+VM936:2 107242.40789265359
+VM936:2 966736.4078926536
+VM936:2 1026175.4078926536
+
 3. Crazy number again!!
     ```js
     // These crazy numbers now are strings 😯 😯  !!  
     const stringNumbers = ["103440", "3799.2663", "3.14159265359", "859494", "59439"];
     let totalNumbersUnder4000 = 0;
 
-    // Convert numbers from strings to numbers and 
-    // sum all numbers under 4000 and store them 
-    // in totalNumbersUnder4000
-    //
-    // Write your solution here
-    ```
+    const stringNumbers = ["103440", "3799.2663", "3.14159265359", "859494", "59439"];
+    let totalNumbersUnder4000 = 0;
+
+    stringNumbers.forEach(function(item){
+    console.log(parseFloat(item));
+});
+
+stringNumbers.forEach((item) => {
+    e = Number(item)
+    if(e < 4000) {
+        totalNumbersUnder4000 += e;
+    }
+console.log(totalNumbersUnder4000)
+})
 
 **Resources:**
 
@@ -271,7 +297,7 @@ The `map()` method creates a new array with the results of calling a provided fu
     const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let times100 = [];
 
-    // Write your solution here
+    const map = nums.map( x => x*100 );
     ```
 2. Capitalize
     Capitalize all the strings in the IA's array and store them in the array capitalizedIA.
@@ -280,7 +306,8 @@ The `map()` method creates a new array with the results of calling a provided fu
     const iAS = ['alanoud', 'reem', 'hazim', 'mansour'];
     let capitalizedIAs = [];
 
-    // Write your solution here
+    const map1 = iAS.map (name => name.toUpperCase());
+console.log(map1);
     ```
 3. Abbreviations
     ```js
@@ -288,17 +315,19 @@ The `map()` method creates a new array with the results of calling a provided fu
 
     let dayAbbreviations = [];
 
-    // Find the abbreviation of all days and add them to dayAbbreviations array
-    // Write your solution here
-    ```
+    const days2 = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const map4 = days.map(day => day.substr(0,3));
+console.log(map4);
+
+
 4. century20
     ```js
     const years = [1989, 2015, 2000, 1999, 2013, 1973, 2012];
     let century20 =  []; 
 
-    // century20 should be: [1989, 2000, 1999, 1973]
-    // Write your solution here
-    ```
+    const years = [1989, 2015, 2000, 1999, 2013, 1973, 2012];
+const map5 = years.map (years => years <= 2000 );
+
 
 
 ### Filter: Team Study (30 mins)
@@ -315,7 +344,9 @@ The `filter()` method creates a new array with all elements that pass the test i
 1. Only get the numbers that are divisible by 3
     ```js
     const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    // Write your solution here
+    const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const result = nums.filter(nums => nums%3==0);
+console.log(result);
     console.log(result);
     ```
 2. Create an array of names (maybe use 3 of your friends)
@@ -327,9 +358,9 @@ The `filter()` method creates a new array with all elements that pass the test i
     3. Use implicit return
     ```js
     const names = ["Lamees", "Nawal", "Mesfer"];
-    // Write your solution here
-    console.log(result);
-    ```
+let withA = [];
+withA = names.filter(name => name.includes('a'))
+console.log(withA);
 3. century20
     ```js
     const years = [1989, 2015, 2000, 1999, 2013, 1973, 2012];
@@ -357,31 +388,40 @@ The `reduce()` method executes a reducer function (that you provide) on each ele
     const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let sum;
 
-    // Write your solution here
+    let sum = nums.reduce((acc, val) => {
+ return acc + val;
+});
 
-    console.log(sum);
-    ```
+    
 2. Crazy Numbers
     ```js
     // Thats an array with crazy numbers we cant read 😯
     const nums = [103440, 3799.2663, 3.14159265359, 859494, 59439];
     let total = 0;
+let total = nums.reduce((acc, val) => {
+return acc + val;
+});
+console.log(total);
+    
 
-    // Sum all the numbers in nums and save the result in total
-    // Write your solution here
-    ```
 3. Crazy number again!!
     ```js
     // These crazy numbers now are strings 😯 😯  !!  
     const stringNumbers = ["103440", "3799.2663", "3.14159265359", "859494", "59439"];
     let totalNumbersUnder4000 = 0;
 
-    // Convert numbers from strings to numbers and 
-    // sum all numbers under 4000 and store them 
-    // in totalNumbersUnder4000
-    //
-    // Write your solution here
-    ```
+    const stringNumbers = ["103440", "3799.2663", "3.14159265359", "859494", "59439"];
+let totalNumbersUnder4000 = 0;
+
+let newString = [];
+stringNumbers.forEach(crazyNumber => {
+    let intNumber = parseFloat(crazyNumber);
+    newString.push(intNumber);
+    });
+    totalNumbersUnder4000 = newString.reduce( (accumulator, currentValue) => accumulator + (currentValue < 4000));
+console.log(totalNumbersUnder4000);
+
+   
 
 ### Keep Going
 
@@ -408,7 +448,9 @@ const products = [
   {name: 'lumber', price: 55}
 ];
 
-// Write your solution here
+const cheapProducts = products.map(function(products){
+	return (products.price)%2
+});
 
 console.log(discountProducts);
 ```
@@ -426,7 +468,18 @@ const products = [
   { name: 'lumber',  price: 55 }
 ];
 
-// Write your solution here
+const products = [
+  { name: 'flower vase',   price: 75 },
+  { name: 'lamp',  price: 85 },
+  { name: 'jar of honey',   price: 95 },
+  { name: 'seashell frame', price: 65 },
+  { name: 'lumber',  price: 55 }
+];
+
+
+var cheapProducts1 = products.filter(function (product) {
+  return products.price%2 ;
+});
 
 console.log(cheapProducts);
 ```
@@ -444,9 +497,20 @@ const products = [
   {name: 'lumber', price: 55}
 ];
 
-// Write your solution here
-
+const products2 = [
+  { name: 'flower vase',   price: 75 },
+  { name: 'lamp',  price: 85 },
+  { name: 'jar of honey',   price: 95 },
+  { name: 'seashell frame', price: 65 },
+  { name: 'lumber',  price: 55 }
+];
+var totalPrice = products2.reduce(function (accumulator, products2) {
+  return accumulator + products2.price;
+}, 0);
+undefined
 console.log(totalPrice);
+ 375
+
 ```
 
 #### Given the following arrays:
