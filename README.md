@@ -259,7 +259,7 @@ instructors.forEach(function(item){
     // sum all numbers under 4000 and store them 
     // in totalNumbersUnder4000
     //
-  stringNumbers.forEach((number)=>{
+    stringNumbers.forEach((number)=>{
     number= Number(number)
     if(number<4000){
     totalNumbersUnder4000 = totalNumbersUnder4000 + number
