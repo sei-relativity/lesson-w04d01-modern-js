@@ -24,20 +24,20 @@
 It's time to take the training wheels off JavaScript and start using its strict mode to eliminate some of JavaScripts silent errors by changing them to throw errors. And, as a nice side effect, we end up helping JavaScript engines to perform optimizations on our code to run it faster.
 
 ```js
-'use strict';
+"use strict";
 ```
 
 Examples of strict mode in action:
 
 ```js
-'use strict';
-                       // Assuming a global variable mistypedVariable exists
-mistypeVariable = 17;  // this line throws a ReferenceError due to the 
-                       // misspelling of variable
+"use strict";
+// Assuming a global variable mistypedVariable exists
+mistypeVariable = 17; // this line throws a ReferenceError due to the
+// misspelling of variable
 ```
 
 ```js
-'use strict';
+"use strict";
 
 // Assignment to a non-writable global
 var undefined = 5; // throws a TypeError
@@ -57,7 +57,6 @@ Read the resources below and experiment with what you know of JavaScript in the 
 2. [MDN: Transitioning to strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode/Transitioning_to_strict_mode)
 3. [CanIUse: ECMAScript 5 Strict Mode](https://caniuse.com/#feat=use-strict)
 
-
 ### Arrow functions
 
 ES6 introduces a new syntax for writing anonymous functions in JavaScript. It has a much more concise syntax and should be easier to pick up after using function expressions. Arrow functions gets its name from its syntax `=>`, which in other languages, is knows as: the fat arrow, the rocket or the Lambda operator.
@@ -67,27 +66,27 @@ ES6 introduces a new syntax for writing anonymous functions in JavaScript. It ha
 ```js
 // Function Declaration
 function sayHello() {
-  console.log('Hello World!');  // Block of statements
+  console.log("Hello World!"); // Block of statements
 }
 
 // Function Expression
 const sayHello = function() {
-  console.log('Hello World!');  // Block of statements
-}
+  console.log("Hello World!"); // Block of statements
+};
 
 // Arrow function expression
 const sayHello = () => {
-  console.log('Hello World!');  // Block of statements
-}
+  console.log("Hello World!"); // Block of statements
+};
 
 // Arrow function expression (compact)
-const sayHello = () => console.log('Hello World!');  // Expression
+const sayHello = () => console.log("Hello World!"); // Expression
 
 // Arrow function expression (compact) with single param
 const greetWorld = greeting => console.log(`${greeting} World!`); // Expression
 
 // Arrow function expression (compact) with single param & return value
-const greetWorld = greeting => `${greeting} World!`;  // Expression
+const greetWorld = greeting => `${greeting} World!`; // Expression
 ```
 
 **Example 2:**
@@ -101,12 +100,12 @@ function add(x, y) {
 // Function Expression
 const add = function(x, y) {
   return x + y;
-}
+};
 
 // Arrow function expression
 const add = (x, y) => {
   return x + y;
-}
+};
 
 // Arrow function expression with implicit return
 const add = (x, y) => x + y;
@@ -126,7 +125,7 @@ function divide(num1, num2) {
 }
 
 function whoIsTheBestStudent() {
-  const studentName = 'Noura';
+  const studentName = "Noura";
   console.log(studentName);
 }
 ```
@@ -134,7 +133,14 @@ function whoIsTheBestStudent() {
 Your solution:
 
 ```js
+const addFive = num => 5 + num;
 
+const divide = (num1, num2) => num1 / num2;
+
+const whoIsTheBestStudent = () => {
+  const studentName = "Noura";
+  console.log(studentName);
+};
 ```
 
 ##### Create a function called `fullName`
@@ -150,7 +156,7 @@ Your solution:
 Your solution:
 
 ```js
-
+const fullName = (first, last) => first + " " + last;
 ```
 
 ##### Turn `sayHello` into an arrow function
@@ -166,14 +172,13 @@ sayHello();
 Your solution:
 
 ```js
-
+const sayHello = (name = "World") => console.log("Hello " + name);
 ```
 
 **Resources:**
 
 1. [MDN: Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 2. [ES6 In Depth: Arrow functions" on hacks.mozilla.org](https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/)
-
 
 ### forEach
 
@@ -188,13 +193,12 @@ Lastly, the `forEach` method always returns the value `undefined`.
 #### Example 1: Using forEach
 
 ```js
-const instructors = ['Usman', 'Reem', 'Hazim', 'Mansour'];
+const instructors = ["Usman", "Reem", "Hazim", "Mansour"];
 
 // Print each instructor
 instructors.forEach(function(element) {
   console.log(element);
 });
-
 
 // Print each instructor along with their Array index
 instructors.forEach(function(element, index) {
@@ -205,7 +209,7 @@ instructors.forEach(function(element, index) {
 #### Example 2: Converting a for-loop to forEach
 
 ```js
-const instructors = ['Usman', 'Reem', 'Hazim', 'Mansour'];
+const instructors = ["Usman", "Reem", "Hazim", "Mansour"];
 const instructorsCopy = [];
 
 // For Loop
@@ -214,7 +218,7 @@ for (let i = 0; i < instructors.length; i++) {
 }
 
 // forEach Loop
-instructors.forEach(function(item){
+instructors.forEach(function(item) {
   instructorsCopy.push(item);
 });
 ```
@@ -222,33 +226,68 @@ instructors.forEach(function(item){
 #### Lab: (15 mins)
 
 1. Say Hi
-    ```js
-    const friends = ["Aisha", "Abdulrahman", "Sumayah"];
 
-    // For each friend in friends, print "Hi friendName!"
-    // Write your solution here
-    ```
+   `````js
+   const friends = ["Aisha", "Abdulrahman", "Sumayah"];
+
+   // For each friend in friends, print "Hi friendName!"
+   // Write your solution here
+   //```
+   const friends = ["Aisha", "Abdulrahman", "Sumayah"];
+   friends.forEach(function(element) {
+     console.log("Hi " + element);
+   });
+   //```
+   //````
+   `````
+
 2. Crazy Numbers
-    ```js
-    // That's an array with crazy numbers we cant read 😯
-    const nums = [103440, 3799.2663, 3.14159265359, 859494, 59439];
-    let total = 0;
 
-    // Sum all the numbers in nums and save the result in total
-    // Write your solution here
-    ```
+   ```js
+   // That's an array with crazy numbers we cant read 😯
+   const nums = [103440, 3799.2663, 3.14159265359, 859494, 59439];
+   let total = 0;
+
+   // Sum all the numbers in nums and save the result in total
+   // Write your solution here
+   const nums = [103440, 3799.2663, 3.14159265359, 859494, 59439];
+   let total = 0;
+   nums.forEach(function(element) {
+     total += element;
+   });
+   ```
+
 3. Crazy number again!!
-    ```js
-    // These crazy numbers now are strings 😯 😯  !!  
-    const stringNumbers = ["103440", "3799.2663", "3.14159265359", "859494", "59439"];
-    let totalNumbersUnder4000 = 0;
 
-    // Convert numbers from strings to numbers and 
-    // sum all numbers under 4000 and store them 
-    // in totalNumbersUnder4000
-    //
-    // Write your solution here
-    ```
+   ````js
+   // These crazy numbers now are strings 😯 😯  !!
+   const stringNumbers = [
+     "103440",
+     "3799.2663",
+     "3.14159265359",
+     "859494",
+     "59439"
+   ];
+   let totalNumbersUnder4000 = 0;
+
+   // Convert numbers from strings to numbers and
+   // sum all numbers under 4000 and store them
+   // in totalNumbersUnder4000
+   //
+   // Write your solution here
+   const stringNumbers = [
+     "103440",
+     "3799.2663",
+     "3.14159265359",
+     "859494",
+     "59439"
+   ];
+   let totalNumbersUnder4000 = 0;
+   stringNumbers.forEach(function(element) {
+     if (Number(element) < 4000) totalNumbersUnder4000 += Number(element);
+   });
+   //```
+   ````
 
 **Resources:**
 
@@ -267,39 +306,77 @@ The `map()` method creates a new array with the results of calling a provided fu
 #### Lab: (30 mins)
 
 1. Multiply by 100
-    ```js
-    const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    let times100 = [];
 
-    // Write your solution here
-    ```
+   ```js
+   const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+   let times100 = [];
+
+   // Write your solution here
+   const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+   let times100 = nums.map(x => x * 100);
+   console.log(times100);
+   ```
+
 2. Capitalize
-    Capitalize all the strings in the IA's array and store them in the array capitalizedIA.
+   Capitalize all the strings in the IA's array and store them in the array capitalizedIA.
 
-    ```js
-    const iAS = ['alanoud', 'reem', 'hazim', 'mansour'];
-    let capitalizedIAs = [];
+   ```js
+   const iAS = ["alanoud", "reem", "hazim", "mansour"];
+   let capitalizedIAs = [];
 
-    // Write your solution here
-    ```
+   // Write your solution here
+   const iAS = ["alanoud", "reem", "hazim", "mansour"];
+   let capitalizedIAs = iAS.map(x => x.toUpperCase());
+   console.log(capitalizedIAs);
+   ```
+
 3. Abbreviations
-    ```js
-    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-    let dayAbbreviations = [];
+   ```js
+   const days = [
+     "Sunday",
+     "Monday",
+     "Tuesday",
+     "Wednesday",
+     "Thursday",
+     "Friday",
+     "Saturday"
+   ];
 
-    // Find the abbreviation of all days and add them to dayAbbreviations array
-    // Write your solution here
-    ```
+   let dayAbbreviations = [];
+
+   // Find the abbreviation of all days and add them to dayAbbreviations array
+   // Write your solution here
+   const days = [
+     "Sunday",
+     "Monday",
+     "Tuesday",
+     "Wednesday",
+     "Thursday",
+     "Friday",
+     "Saturday"
+   ];
+   let dayAbbreviations =
+   days.map(x => x.substring(0, 3).toUpperCase();
+   console.log(dayAbbreviations);
+   ```
+
 4. century20
-    ```js
-    const years = [1989, 2015, 2000, 1999, 2013, 1973, 2012];
-    let century20 =  []; 
 
-    // century20 should be: [1989, 2000, 1999, 1973]
-    // Write your solution here
-    ```
+```js
+const years = [1989, 2015, 2000, 1999, 2013, 1973, 2012];
+let century20 = [];
 
+// century20 should be: [1989, 2000, 1999, 1973]
+// Write your solution here
+const years = [1989, 2015, 2000, 1999, 2013, 1973, 2012];
+let century20 = years.map(x => {
+  if (x > 1900 && x <= 2000) {
+    return x;
+  }
+});
+console.log(century20);
+```
 
 ### Filter: Team Study (30 mins)
 
@@ -313,32 +390,38 @@ The `filter()` method creates a new array with all elements that pass the test i
 #### Lab: (15 mins)
 
 1. Only get the numbers that are divisible by 3
-    ```js
-    const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    // Write your solution here
-    console.log(result);
-    ```
+   ```js
+   // Write your solution here
+   const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+   let result = nums.filter(val => {
+     return val % 3 === 0;
+   });
+   console.log(result);
+   ```
 2. Create an array of names (maybe use 3 of your friends)
 
-    Requirements:
+   Requirements:
 
-    1. Use filter to return the names with the letter "a" in them
-    2. Use Arrow function
-    3. Use implicit return
-    ```js
-    const names = ["Lamees", "Nawal", "Mesfer"];
-    // Write your solution here
-    console.log(result);
-    ```
+   1. Use filter to return the names with the letter "a" in them
+   2. Use Arrow function
+   3. Use implicit return
+
+   ```js
+   const names = ["Lamees", "Nawal", "Mesfer"];
+   let result = names.filter(val => {
+     return val.includes("a");
+   });
+   console.log(result);
+   ```
+
 3. century20
-    ```js
-    const years = [1989, 2015, 2000, 1999, 2013, 1973, 2012];
-    let century20 = []; 
 
-    // century20 should be: [1989, 2000, 1999, 1973]
-    // Write your solution here
-    ```
-
+```js
+const years = [1989, 2015, 2000, 1999, 2013, 1973, 2012];
+let century20 = years.filter(val => {
+  return val > 1900 && val <= 2000;
+});
+```
 
 ### Reduce: Team Study (30 mins)
 
@@ -353,35 +436,52 @@ The `reduce()` method executes a reducer function (that you provide) on each ele
 #### Lab: (15 mins)
 
 1. Sum
-    ```js
-    const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    let sum;
 
-    // Write your solution here
+   ```js
+   const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+   let sum = nums.reduce(
+     (accumulator, currentValue) => accumulator + currentValue
+   );
+   console.log(sum);
+   ```
 
-    console.log(sum);
-    ```
 2. Crazy Numbers
-    ```js
-    // Thats an array with crazy numbers we cant read 😯
-    const nums = [103440, 3799.2663, 3.14159265359, 859494, 59439];
-    let total = 0;
 
-    // Sum all the numbers in nums and save the result in total
-    // Write your solution here
-    ```
+```js
+// Thats an array with crazy numbers we cant read 😯
+const nums = [103440, 3799.2663, 3.14159265359, 859494, 59439];
+let total = nums.reduce(
+  (accumulator, currentValue) => accumulator + currentValue
+);
+console.log(total);
+```
+
 3. Crazy number again!!
-    ```js
-    // These crazy numbers now are strings 😯 😯  !!  
-    const stringNumbers = ["103440", "3799.2663", "3.14159265359", "859494", "59439"];
-    let totalNumbersUnder4000 = 0;
 
-    // Convert numbers from strings to numbers and 
-    // sum all numbers under 4000 and store them 
-    // in totalNumbersUnder4000
-    //
-    // Write your solution here
-    ```
+   ```js
+   // These crazy numbers now are strings 😯 😯  !!
+   // Convert numbers from strings to numbers and
+   // sum all numbers under 4000 and store them
+   // in totalNumbersUnder4000
+   //
+   // Write your solution here
+   const stringNumbers = [
+     "103440",
+     "3799.2663",
+     "3.14159265359",
+     "859494",
+     "59439"
+   ];
+   let totalNumbersUnder4000 = stringNumbers.reduce(
+     (accumulator, currentValue) => {
+       if (Number(currentValue) < 4000) {
+         return Number(accumulator) + Number(currentValue);
+       } else return Number(accumulator);
+     },
+     0
+   );
+   console.log(totalNumbersUnder4000);
+   ```
 
 ### Keep Going
 
@@ -401,15 +501,16 @@ There's a sale going on! Create a variable called `discountProducts` that takes 
 
 ```js
 const products = [
-  {name: 'flower vase', price: 75},
-  {name: 'lamp', price: 85},
-  {name: 'jar of honey', price: 95},
-  {name: 'coil', price: 65},
-  {name: 'lumber', price: 55}
+  { name: "flower vase", price: 75 },
+  { name: "lamp", price: 85 },
+  { name: "jar of honey", price: 95 },
+  { name: "coil", price: 65 },
+  { name: "lumber", price: 55 }
 ];
-
-// Write your solution here
-
+const discountProducts = products.map(x => ({
+  text: x.name,
+  value: x.price * 0.5
+}));
 console.log(discountProducts);
 ```
 
@@ -419,15 +520,16 @@ Create a variable called `cheapProducts` that contains an array of objects for a
 
 ```js
 const products = [
-  { name: 'flower vase',   price: 75 },
-  { name: 'lamp',  price: 85 },
-  { name: 'jar of honey',   price: 95 },
-  { name: 'seashell frame', price: 65 },
-  { name: 'lumber',  price: 55 }
+  { name: "flower vase", price: 75 },
+  { name: "lamp", price: 85 },
+  { name: "jar of honey", price: 95 },
+  { name: "seashell frame", price: 65 },
+  { name: "lumber", price: 55 }
 ];
 
-// Write your solution here
-
+const cheapProducts = products.filter(x => {
+  return x.price < 70;
+});
 console.log(cheapProducts);
 ```
 
@@ -437,14 +539,17 @@ Create a variable called `totalPrice`, and use `.reduce` to get the sum of all p
 
 ```js
 const products = [
-  {name: 'flower vase', price: 75},
-  {name: 'lamp', price: 85},
-  {name: 'jar of honey', price: 95},
-  {name: 'coil', price: 65},
-  {name: 'lumber', price: 55}
+  { name: "flower vase", price: 75 },
+  { name: "lamp", price: 85 },
+  { name: "jar of honey", price: 95 },
+  { name: "coil", price: 65 },
+  { name: "lumber", price: 55 }
 ];
 
-// Write your solution here
+const totalPrice = products.reduce(
+  (accumulator, currentValue) => accumulator + currentValue.price,
+  0
+);
 
 console.log(totalPrice);
 ```
@@ -452,13 +557,192 @@ console.log(totalPrice);
 #### Given the following arrays:
 
 ```js
-const smallNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0]
+const smallNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0];
 
-const nums = [ 37, 826, 209, 419, 309, 48, 738, 709,728, 607, 9, 863, 976, 588, 611, 164, 383, 261, 14, 525, 479, 169, 755, 574, 330, 736, 541, 838, 577, 957, 179, 436, 333, 206, 295, 744, 926, 799, 691, 259, 401, 104, 630, 645, 722, 607, 587, 714, 446, 356, 18, 16, 14, 5, 13, 13, 17, 5, 5, 18, 12, 5, 18, 11, 2, 2, 9, 8, 4, 5, 18, 15, 18, 0, 6, 11, 18, 14, 2, 19, -14, 5, 18, 12, 3, 12, 7, 15, 5, 3, 12, 7, 6, 10, 3, 3, 3, 18, 12, 14 ]
+const nums = [
+  37,
+  826,
+  209,
+  419,
+  309,
+  48,
+  738,
+  709,
+  728,
+  607,
+  9,
+  863,
+  976,
+  588,
+  611,
+  164,
+  383,
+  261,
+  14,
+  525,
+  479,
+  169,
+  755,
+  574,
+  330,
+  736,
+  541,
+  838,
+  577,
+  957,
+  179,
+  436,
+  333,
+  206,
+  295,
+  744,
+  926,
+  799,
+  691,
+  259,
+  401,
+  104,
+  630,
+  645,
+  722,
+  607,
+  587,
+  714,
+  446,
+  356,
+  18,
+  16,
+  14,
+  5,
+  13,
+  13,
+  17,
+  5,
+  5,
+  18,
+  12,
+  5,
+  18,
+  11,
+  2,
+  2,
+  9,
+  8,
+  4,
+  5,
+  18,
+  15,
+  18,
+  0,
+  6,
+  11,
+  18,
+  14,
+  2,
+  19,
+  -14,
+  5,
+  18,
+  12,
+  3,
+  12,
+  7,
+  15,
+  5,
+  3,
+  12,
+  7,
+  6,
+  10,
+  3,
+  3,
+  3,
+  18,
+  12,
+  14
+];
 
-const panagram = ['The', 'quick','brown','fox', 'jumps', 'over', 'the', 'lazy', 'dog']
+const panagram = [
+  "The",
+  "quick",
+  "brown",
+  "fox",
+  "jumps",
+  "over",
+  "the",
+  "lazy",
+  "dog"
+];
 
-const panagrams = [ 'The','job', 'requires', 'extra', 'pluck', 'and', 'zeal', 'from', 'every', 'young', 'wage', 'earner',  'Quick', 'zephyrs', 'blow,', 'vexing', 'daft', 'Jim', 'Two', 'driven', 'jocks', 'help', 'fax', 'my', 'big', 'quiz', 'Five', 'quacking', 'zephyrs', 'jolt', 'my', 'wax', 'bed', 'The', 'five', 'boxing', 'wizards', 'jump', 'quickly', 'Pack', 'my', 'box', 'with', 'five', 'dozen', 'liquor', 'jugs', 'We', 'promptly', 'judged', 'antique', 'ivory', 'buckles', 'for', 'the', 'next', 'prize', 'Jaded', 'zombies', 'acted', 'quaintly', 'but', 'kept','driving','their','oxen','forward' ]
+const panagrams = [
+  "The",
+  "job",
+  "requires",
+  "extra",
+  "pluck",
+  "and",
+  "zeal",
+  "from",
+  "every",
+  "young",
+  "wage",
+  "earner",
+  "Quick",
+  "zephyrs",
+  "blow,",
+  "vexing",
+  "daft",
+  "Jim",
+  "Two",
+  "driven",
+  "jocks",
+  "help",
+  "fax",
+  "my",
+  "big",
+  "quiz",
+  "Five",
+  "quacking",
+  "zephyrs",
+  "jolt",
+  "my",
+  "wax",
+  "bed",
+  "The",
+  "five",
+  "boxing",
+  "wizards",
+  "jump",
+  "quickly",
+  "Pack",
+  "my",
+  "box",
+  "with",
+  "five",
+  "dozen",
+  "liquor",
+  "jugs",
+  "We",
+  "promptly",
+  "judged",
+  "antique",
+  "ivory",
+  "buckles",
+  "for",
+  "the",
+  "next",
+  "prize",
+  "Jaded",
+  "zombies",
+  "acted",
+  "quaintly",
+  "but",
+  "kept",
+  "driving",
+  "their",
+  "oxen",
+  "forward"
+];
 ```
 
 ##### [every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
@@ -477,26 +761,32 @@ const panagrams = [ 'The','job', 'requires', 'extra', 'pluck', 'and', 'zeal', 'f
 - Find the first word that is longer than 6 characters
 
 ##### [findIndex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
+
 - Find the index of the first number that is divisible by 3
 - Find the index of the first word that is less than 2 characters long
 
 ##### [forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+
 - `console.log` each value of the nums array multiplied by 3
 - `console.log` each word with an exclamation point at the end of it
 
 ##### [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+
 - Make a new array of each number multiplied by 100
 - Make a new array of all the words in all uppercase
 
 ##### [reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+
 - Add all the numbers in the array together using the `reduce` method
 - Concatenate all the words using reduce
 
 ##### [some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
+
 - Find out if some numbers are divisible by 7
 - Find out if some words have the letter `a` in them
 
 ##### [sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+
 - Try to sort without any arguments, do you get what you'd expect with the numbers array?
 - Sort the numbers in ascending order
 - Sort the numbers in descending order
