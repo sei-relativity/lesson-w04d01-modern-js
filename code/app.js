@@ -176,3 +176,23 @@ const products = [
   cheapProducts = products.filter(item => item.price < 70)
   
   console.log(cheapProducts);
+
+
+
+//   reduce
+const products = [
+    {name: 'flower vase', price: 75},
+    {name: 'lamp', price: 85},
+    {name: 'jar of honey', price: 95},
+    {name: 'coil', price: 65},
+    {name: 'lumber', price: 55}
+  ];
+  
+  // Write your solution here
+  let totalPrice = 0;
+  let priceArray = [];
+
+  priceArray = products.map(item => item.price)
+  totalPrice = priceArray.reduce((accumulator, currentValue) => accumulator + currentValue);
+  
+  console.log(totalPrice);

@@ -501,7 +501,13 @@ const products = [
 
 // Write your solution here
 
-console.log(totalPrice);
+  let totalPrice = 0;
+  let priceArray = [];
+
+  priceArray = products.map(item => item.price)
+  totalPrice = priceArray.reduce((accumulator, currentValue) => accumulator + currentValue);
+  
+  console.log(totalPrice);
 ```
 
 #### Given the following arrays:
