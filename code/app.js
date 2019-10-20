@@ -221,12 +221,21 @@ const products = [
 ];
 
 // const discountProducts = products.map( Element => 
-  {
-    Element.price = Element.price/2
-    return Element;
-    });
+  // {
+  //   Element.price = Element.price/2
+  //   return Element;
+  //   });
 
-    console.log(discountProducts);
+  //   console.log(discountProducts);
+
+  let discountProducts =[];
+discountProducts = products.map((item)=>{
+  let tempObj = {};
+  tempObj.name = item.name;
+  tempObj.price = item.price/2
+  return tempObj;
+})
+console.log(discountProducts);
 
 //Filtrer practice 
     const products = [
@@ -242,4 +251,21 @@ const products = [
   
         );
         console.log(cheapProducts);
+
+
+// //Reduce Practice     
+const products = [
+  {name: 'flower vase', price: 75},
+  {name: 'lamp', price: 85},
+  {name: 'jar of honey', price: 95},
+  {name: 'coil', price: 65},
+  {name: 'lumber', price: 55}
+];
+
+
+let productPrice = [];
+const totalPrice = products.reduce( (accumulator,currentValue) =>{
+  return accumulator+currentValue.price;
+},0)
+console.log(totalPrice);
 
