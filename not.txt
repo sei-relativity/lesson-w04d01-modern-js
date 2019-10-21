@@ -1,0 +1,3 @@
+js can declare a variable without let or variable
+
+"use strict" is command to make js to be more strict about the programming roals 
