@@ -16,7 +16,7 @@ const products = [
 
     console.log(discountProducts);
 
-    //2.Filter
+//2.Filter
 const products = [
     { name: 'flower vase',   price: 75 },
     { name: 'lamp',  price: 85 },
@@ -31,7 +31,7 @@ const products = [
       
     console.log(cheapProducts);
 
-    //3.Reduce
+//3.Reduce
 const products = [
     { name: 'flower vase',   price: 75 },
     { name: 'lamp',  price: 85 },
