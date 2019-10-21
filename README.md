@@ -281,7 +281,7 @@ instructors.forEach(function(item){
     // sum all numbers under 4000 and store them
     // in totalNumbersUnder4000
     stringNumbers.forEach((number) => {
-      (number < 4000) ? totalNumbersUnder4000 += parseFloat(parseInt(number)) : false;
+      (number < 4000) ? totalNumbersUnder4000 += parseInt(number) : false;
     });
 
     console.log(totalNumbersUnder4000);
@@ -444,9 +444,12 @@ The `reduce()` method executes a reducer function (that you provide) on each ele
     // Convert numbers from strings to numbers and
     // sum all numbers under 4000 and store them
     // in totalNumbersUnder4000
-    stringNumbers.reduce((accumelator, currentValue) => {
-      totalNumbersUnder4000 = parseFloat(parseInt(accumelator + currentValue));
-      return totalNumbersUnder4000;
+    totalNumbersUnder4000 = stringNumbers.reduce((accumelator, currentValue) => {
+      if (parseInt(currentValue) < 4000) {
+        return parseInt(accumelator + currentValue);
+      } else {
+        return accumelator;
+      }
     }, 0);
 
     console.log(totalNumbersUnder4000);
