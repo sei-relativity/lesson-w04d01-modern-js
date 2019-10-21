@@ -32,7 +32,7 @@ Examples of strict mode in action:
 ```js
 'use strict';
                        // Assuming a global variable mistypedVariable exists
-mistypeVariable = 17;  // this line throws a ReferenceError due to the 
+mistypeVariable = 17;  // this line throws a ReferenceError due to the
                        // misspelling of variable
 ```
 
@@ -134,7 +134,21 @@ function whoIsTheBestStudent() {
 Your solution:
 
 ```js
+// 1
+const addFive = (num) => {
+  return 5 + num;
+}
 
+// 2
+const divide = (num1, num2) => {
+  return num1 / num2;
+}
+
+// 3
+const whoIsTheBestStudent = () => {
+  const studentName = 'Noura';
+  console.log(studentName);
+}
 ```
 
 ##### Create a function called `fullName`
@@ -150,7 +164,18 @@ Your solution:
 Your solution:
 
 ```js
+// Function Expression
+const fullName = function(firstName, lastName) {
+  return `${firstName} ${lastName}`;
+}
 
+// Arrow Function
+const fullName = (firstName, lastName) => {
+  return `${firstName} ${lastName}`;
+}
+
+// Arrow Function with implicit return
+const fullName = (firstName, lastName) => `${firstName} ${lastName}`;
 ```
 
 ##### Turn `sayHello` into an arrow function
@@ -166,7 +191,10 @@ sayHello();
 Your solution:
 
 ```js
+// Arrow Function
+const sayHello = (name = 'World') => console.log(`Hello ${name}`);
 
+sayHello();
 ```
 
 **Resources:**
@@ -226,7 +254,9 @@ instructors.forEach(function(item){
     const friends = ["Aisha", "Abdulrahman", "Sumayah"];
 
     // For each friend in friends, print "Hi friendName!"
-    // Write your solution here
+    friends.forEach((name) => {
+      console.log(`Hi ${name}`);
+    });
     ```
 2. Crazy Numbers
     ```js
@@ -235,19 +265,26 @@ instructors.forEach(function(item){
     let total = 0;
 
     // Sum all the numbers in nums and save the result in total
-    // Write your solution here
+    nums.forEach((number) => {
+      total += number;
+    });
+
+    console.log(total);
     ```
 3. Crazy number again!!
     ```js
-    // These crazy numbers now are strings 😯 😯  !!  
+    // These crazy numbers now are strings 😯 😯  !!
     const stringNumbers = ["103440", "3799.2663", "3.14159265359", "859494", "59439"];
     let totalNumbersUnder4000 = 0;
 
-    // Convert numbers from strings to numbers and 
-    // sum all numbers under 4000 and store them 
+    // Convert numbers from strings to numbers and
+    // sum all numbers under 4000 and store them
     // in totalNumbersUnder4000
-    //
-    // Write your solution here
+    stringNumbers.forEach((number) => {
+      (number < 4000) ? totalNumbersUnder4000 += parseInt(number) : false;
+    });
+
+    console.log(totalNumbersUnder4000);
     ```
 
 **Resources:**
@@ -271,7 +308,9 @@ The `map()` method creates a new array with the results of calling a provided fu
     const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let times100 = [];
 
-    // Write your solution here
+    // Multiply by 100
+    const times100 = nums.map(x => x * 100);
+    console.log(times100);
     ```
 2. Capitalize
     Capitalize all the strings in the IA's array and store them in the array capitalizedIA.
@@ -280,7 +319,9 @@ The `map()` method creates a new array with the results of calling a provided fu
     const iAS = ['alanoud', 'reem', 'hazim', 'mansour'];
     let capitalizedIAs = [];
 
-    // Write your solution here
+    // Capitalize all the strings
+    capitalizedIAs = iAS.map(lowerCaseName => lowerCaseName.toUpperCase());
+    console.log(capitalizedIAs);
     ```
 3. Abbreviations
     ```js
@@ -289,15 +330,22 @@ The `map()` method creates a new array with the results of calling a provided fu
     let dayAbbreviations = [];
 
     // Find the abbreviation of all days and add them to dayAbbreviations array
-    // Write your solution here
+    dayAbbreviations = days.map(dayThreeLetters => dayThreeLetters.substring(0, 3));
+    console.log(dayAbbreviations);
     ```
 4. century20
     ```js
     const years = [1989, 2015, 2000, 1999, 2013, 1973, 2012];
-    let century20 =  []; 
+    let century20 =  [];
 
     // century20 should be: [1989, 2000, 1999, 1973]
-    // Write your solution here
+    century20 = years.map((century20Year) => (century20Year < 2001) ? century20Year : false);
+
+    century20.forEach((century, index) => {
+      (century === false) ? century20.splice(index, 1) : false;
+    });
+
+    console.log(century20);
     ```
 
 
@@ -315,7 +363,8 @@ The `filter()` method creates a new array with all elements that pass the test i
 1. Only get the numbers that are divisible by 3
     ```js
     const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    // Write your solution here
+    // Get the dividable numbers
+    result = nums.filter((number) => (number % 3 === 0) ? number : false);
     console.log(result);
     ```
 2. Create an array of names (maybe use 3 of your friends)
@@ -327,16 +376,23 @@ The `filter()` method creates a new array with all elements that pass the test i
     3. Use implicit return
     ```js
     const names = ["Lamees", "Nawal", "Mesfer"];
-    // Write your solution here
+    // Get the names that have a
+    result = names.filter(name => name.includes('a'));
     console.log(result);
     ```
 3. century20
     ```js
     const years = [1989, 2015, 2000, 1999, 2013, 1973, 2012];
-    let century20 = []; 
+    let century20 = [];
 
     // century20 should be: [1989, 2000, 1999, 1973]
-    // Write your solution here
+    century20 = years.filter(century20Year => century20Year < 2001);
+
+    century20.forEach((century, index) => {
+      (century === undefined) ? century20.splice(index, 1) : false;
+    });
+
+    console.log(century20);
     ```
 
 
@@ -357,7 +413,11 @@ The `reduce()` method executes a reducer function (that you provide) on each ele
     const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let sum;
 
-    // Write your solution here
+    // Reduce the array of number
+    nums.reduce((accumelator, currentValue) => {
+      sum = accumelator + currentValue;
+      return sum;
+    }, 0);
 
     console.log(sum);
     ```
@@ -368,19 +428,31 @@ The `reduce()` method executes a reducer function (that you provide) on each ele
     let total = 0;
 
     // Sum all the numbers in nums and save the result in total
-    // Write your solution here
+    nums.reduce((accumelator, currentValue) => {
+      total = accumelator + currentValue;
+      return total;
+    }, 0);
+
+    console.log(total);
     ```
 3. Crazy number again!!
     ```js
-    // These crazy numbers now are strings 😯 😯  !!  
+    // These crazy numbers now are strings 😯 😯  !!
     const stringNumbers = ["103440", "3799.2663", "3.14159265359", "859494", "59439"];
     let totalNumbersUnder4000 = 0;
 
-    // Convert numbers from strings to numbers and 
-    // sum all numbers under 4000 and store them 
+    // Convert numbers from strings to numbers and
+    // sum all numbers under 4000 and store them
     // in totalNumbersUnder4000
-    //
-    // Write your solution here
+    totalNumbersUnder4000 = stringNumbers.reduce((accumelator, currentValue) => {
+      if (parseInt(currentValue) < 4000) {
+        return parseInt(accumelator + currentValue);
+      } else {
+        return accumelator;
+      }
+    }, 0);
+
+    console.log(totalNumbersUnder4000);
     ```
 
 ### Keep Going
