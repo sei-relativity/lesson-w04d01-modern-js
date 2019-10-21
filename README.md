@@ -423,10 +423,12 @@ The `reduce()` method executes a reducer function (that you provide) on each ele
 
 1. Sum
     ```js
-    const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    let sum;
+    
 
-    // Write your solution here
+    const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+     let sum = nums.reduce((acc, val) => {
+    return acc + val;
+                       });
 
     console.log(sum);
     ```
@@ -436,20 +438,30 @@ The `reduce()` method executes a reducer function (that you provide) on each ele
     const nums = [103440, 3799.2663, 3.14159265359, 859494, 59439];
     let total = 0;
 
-    // Sum all the numbers in nums and save the result in total
-    // Write your solution here
+    let total = nums.reduce((acc, val) => {
+          return acc + val;
+                             }); 
+         console.log(total);
+
     ```
 3. Crazy number again!!
     ```js
     // These crazy numbers now are strings 😯 😯  !!  
     const stringNumbers = ["103440", "3799.2663", "3.14159265359", "859494", "59439"];
-    let totalNumbersUnder4000 = 0;
+    let totalNumbersUnder4000 = 0; 
+    let numbers=0; 
+    let totalNumbersUnder4000 = 0; 
+    stringNumbers.reduce((item)=> {
+    numbers=parseInt(item) ;  
+    if(numbers < 4000) {
+    totalNumbersUnder4000+=numbers ; 
+      }
 
-    // Convert numbers from strings to numbers and 
-    // sum all numbers under 4000 and store them 
-    // in totalNumbersUnder4000
-    //
-    // Write your solution here
+
+                      }); 
+
+    
+   
     ```
 
 ### Keep Going
