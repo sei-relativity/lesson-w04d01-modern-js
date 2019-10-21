@@ -134,7 +134,12 @@ function whoIsTheBestStudent() {
 Your solution:
 
 ```js
-
+const addFive = num => 5 + num 
+const diviide = (num1, num2) => num1 / num2
+const whoIsTheBestStudent = ()=>{
+  const studentName = "Noura";
+  console.log(studentName);
+}
 ```
 
 ##### Create a function called `fullName`
@@ -151,6 +156,22 @@ Your solution:
 
 ```js
 
+// 1 
+const fullName= function (first, last){
+return `${first} ${last}`;
+}
+
+
+// 2
+const fullName = (first, last) => {
+  
+  return `${first} ${last}`;
+}
+
+//3
+
+const fullName = (first, last) => `${first} ${last}`;
+
 ```
 
 ##### Turn `sayHello` into an arrow function
@@ -166,6 +187,7 @@ sayHello();
 Your solution:
 
 ```js
+const sayHello = (name) => `Hello ${}'
 
 ```
 
@@ -227,12 +249,18 @@ instructors.forEach(function(item){
 
     // For each friend in friends, print "Hi friendName!"
     // Write your solution here
+    friends.forEach((item) => {
+    console.log (`Hi ${item}`)
+});
     ```
 2. Crazy Numbers
     ```js
     // That's an array with crazy numbers we cant read 😯
     const nums = [103440, 3799.2663, 3.14159265359, 859494, 59439];
     let total = 0;
+    nums.forEach((total, num) => {
+
+    });
 
     // Sum all the numbers in nums and save the result in total
     // Write your solution here
@@ -272,6 +300,12 @@ The `map()` method creates a new array with the results of calling a provided fu
     let times100 = [];
 
     // Write your solution here
+    const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let times100 = [];
+    
+    const multi = nums.map(x => x * 100 );
+  
+    console.log(multi);
     ```
 2. Capitalize
     Capitalize all the strings in the IA's array and store them in the array capitalizedIA.
@@ -281,6 +315,7 @@ The `map()` method creates a new array with the results of calling a provided fu
     let capitalizedIAs = [];
 
     // Write your solution here
+    capitalizedIAs = iAS.map(lower => lower.toUpperCase());
     ```
 3. Abbreviations
     ```js
@@ -290,6 +325,7 @@ The `map()` method creates a new array with the results of calling a provided fu
 
     // Find the abbreviation of all days and add them to dayAbbreviations array
     // Write your solution here
+    dayAbbreviations= days.map(three => three.substring(0, 3));
     ```
 4. century20
     ```js
@@ -298,6 +334,7 @@ The `map()` method creates a new array with the results of calling a provided fu
 
     // century20 should be: [1989, 2000, 1999, 1973]
     // Write your solution here
+    century20 = years.map(twinty => (twinty < 2001)?   twinty: false);
     ```
 
 
@@ -316,6 +353,7 @@ The `filter()` method creates a new array with all elements that pass the test i
     ```js
     const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     // Write your solution here
+    result = nums.filter((number) => (number%3 == 0 )? number: false);
     console.log(result);
     ```
 2. Create an array of names (maybe use 3 of your friends)
@@ -328,6 +366,7 @@ The `filter()` method creates a new array with all elements that pass the test i
     ```js
     const names = ["Lamees", "Nawal", "Mesfer"];
     // Write your solution here
+    names.filter(name => name.includes('a'))
     console.log(result);
     ```
 3. century20
@@ -338,7 +377,7 @@ The `filter()` method creates a new array with all elements that pass the test i
     // century20 should be: [1989, 2000, 1999, 1973]
     // Write your solution here
     ```
-
+  century20  = years.filter((y) => (y <2001 )? y :false );
 
 ### Reduce: Team Study (30 mins)
 
